@@ -64,8 +64,56 @@ class HomeScreen extends StatelessWidget {
                     auth: "Gary Memsay",
                     rating: 4.7,
                   ),
-                  SizedBox (width: 30,),
+                  SizedBox(
+                    width: 30,
+                  ),
                 ],
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    RichText(
+                      text: TextSpan(
+                        style: Theme.of(context).textTheme.display1,
+                        children: [
+                          TextSpan(text: "Best of the "),
+                          TextSpan(
+                            text: "day",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 20),
+                        width: double.infinity,
+                        height: 205,
+                        child: Stack(
+                          children: <Widget>[
+                            Positioned(
+                              child: Container(
+                                height: 185,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFEAEAEA).withOpacity(.45),
+                                  borderRadius: BorderRadius.circular(29),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              child: Image.asset("assets/images/book-3.png"),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -74,5 +122,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
