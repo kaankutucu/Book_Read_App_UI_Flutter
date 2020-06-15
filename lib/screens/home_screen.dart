@@ -1,5 +1,5 @@
-import 'package:bookreading/constants.dart';
-import 'package:bookreading/widgets/book_rating.dart';
+import 'package:bookreading/widgets/reading_card_list.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
               height: size.height * .1,
@@ -42,73 +42,29 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Container(
-              height: 245,
-              width: 202,
-              child: Stack(
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
                 children: <Widget>[
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: Container(
-                      height: 221,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(29),
-                        boxShadow: [
-                          BoxShadow(
-                            offset: (Offset(0, 10)),
-                            blurRadius: 33,
-                            color: kShadowColor,
-                          ),
-                        ],
-                      ),
-                    ),
+                  ReadingListCard(
+                    image: "assets/images/book-5.png",
+                    title: "Kral Sakir & Macera Adasi ",
+                    auth: "Gary Venchuk",
+                    rating: 4.9,
                   ),
-                  Image.asset(
-                    "assets/images/book-5.png",
-                    width: 150,
+                  ReadingListCard(
+                    image: "assets/images/book-1.png",
+                    title: "Top Ten Business ",
+                    auth: "Herman Joel",
+                    rating: 4.8,
                   ),
-                  Positioned(
-                    top: 35,
-                    left: 150,
-                    child: Column(
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(
-                            Icons.favorite_border,
-                          ),
-                          onPressed: () {},
-                        ),
-                        BookRating(score: 8,),
-                      ],
-                    ),
+                  ReadingListCard(
+                    image: "assets/images/book-2.png",
+                    title: "Crushing ",
+                    auth: "Gary Memsay",
+                    rating: 4.7,
                   ),
-                  Positioned(
-                    top: 160,
-                    child: Container(
-                      height: 85,
-                      width: 202,
-                      child: Column(
-                        children: <Widget>[
-                          RichText(
-                            text: TextSpan(
-                              style: TextStyle(color: kBlackColor),
-                              children: [
-                                TextSpan(
-                                  text: "Kral Sakir: Macera Adasi",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  SizedBox (width: 30,),
                 ],
               ),
             ),
@@ -118,4 +74,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 
