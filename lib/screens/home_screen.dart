@@ -1,5 +1,6 @@
 import 'package:bookreading/constants.dart';
 import 'package:bookreading/screens/details_screen.dart';
+import 'package:bookreading/screens/details_screen2.dart';
 import 'package:bookreading/widgets/book_rating.dart';
 import 'package:bookreading/widgets/reading_card_list.dart';
 import 'package:bookreading/widgets/two_side_rounded_button.dart';
@@ -70,6 +71,16 @@ class HomeScreen extends StatelessWidget {
                           title: "Top Ten Business Hacks",
                           auth: "Herman Joel",
                           rating: 4.8,
+                          pressDetails: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailsScreen2();
+                                },
+                              ),
+                            );
+                          },
                         ),
                         SizedBox(width: 30),
                       ],
